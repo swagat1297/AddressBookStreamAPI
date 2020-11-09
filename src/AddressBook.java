@@ -10,7 +10,6 @@ public class AddressBook {
     public static final List<String> PersonDetails = null;
 	HashMap <String, PersonDetails> contactList = new HashMap<String, PersonDetails>();
     Scanner scanner = new Scanner(System.in);
-    static AddressBook addressBook = new AddressBook();
 
     public void getUserChoice() {
         boolean isTerminate = false;
@@ -20,11 +19,11 @@ public class AddressBook {
             switch (option)
             {
                 case 1:
-                    PersonDetails personObject = addressBook.getUserInputInformation();
+                    PersonDetails personObject = getUserInputInformation();
                     contactList.put(personObject.getEmailId(), personObject);
                     break;
                 case 2:
-                    addressBook.updateContact();
+                    updateContact();
                     break;
                 case 3:System.out.println("Enter choice view :\n1. all address book\n2.by state\n 3.by city ");
                 	   int choice = scanner.nextInt();
@@ -44,7 +43,7 @@ public class AddressBook {
                 		
                     break;
                 case 4:
-                    addressBook.deletePerson();
+                   deletePerson();
                     break;
                 case 5:System.out.println("Count by\n 1:city\n 2.state");
                 	   int countChoice = scanner.nextInt();
